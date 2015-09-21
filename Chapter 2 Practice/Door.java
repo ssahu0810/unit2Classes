@@ -8,7 +8,9 @@
 public class Door
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private boolean isLocked;
+    private boolean isOpened;
+    
 
     /**
      * Constructor for objects of class Door
@@ -16,7 +18,8 @@ public class Door
     public Door()
     {
         // initialise instance 
-        String location = n 
+        this.isLocked = false;
+        this.isOpened = false;
     }
 
     /**
@@ -25,9 +28,43 @@ public class Door
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public Door(boolean locked, boolean opened)
     {
         // put your code here
-        return x + y;
+        this.isLocked = locked;
+        this.isOpened = opened;
+    }
+    
+    public void lock()
+    {
+        this.isLocked = true;
+    }
+    
+    public void open()
+    {
+        if( this.isLocked == false )
+        {
+            this.isOpened = true;
+        }
+    }
+    
+    public void close()
+    {
+        this.isOpened = false;
+    }
+    
+    // personal style would ve to call this method isLocked,
+    // but I'm trying to be consistent with other ezanples
+    public boolean getLocked()
+    {
+        return this.isLocked;
+    }
+    
+    // personal style would ve to call this method isOpened,
+    // but I'm trying to be consistent with other ezanples
+    public boolean getOpened()
+    {
+        return this.isOpened;
     }
 }
+
