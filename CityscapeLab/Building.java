@@ -16,16 +16,18 @@ public class Building
 {
     // instance variables
     private int xLeft;
-    private int yTop;
+    private int height;
+    private int width;
 
     /**
      * Constructor for objects of class Building
      */
-    public Building(int x, int y)
+    public Building(int x, int y, int z)
     {
         // initialise instance variables
-        xLeft =  x;
-        yTop = y;
+        xLeft = x * 20;
+        width = y * 20;
+        height = z * 20;
     }
 
     /**
@@ -36,18 +38,21 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle body = new Rectangle(xLeft, yTop + 150, 100, 600);
+        Rectangle body = new Rectangle(xLeft, 400 - height, width, height);
         g2.draw(body);
         g2.setColor(Color.BLACK);
         g2.fill(body);
+        int paneLeft = xLeft + 4;
         
-        
-        for( int paneTop = yTop + 2; paneTop < yTop + 390; paneTop += 25 )
-        {
-            Rectangle pane = new Rectangle(xLeft + 5,paneTop + 150,20,20);
-            g2.draw(pane);
-            g2.setColor(Color.YELLOW);
-            g2.fill(pane);
+        while (paneLeft < xLeft + width){
+            for( int paneTop = 400 - height + 4; paneTop < 400; paneTop += 20 )
+            {
+                Rectangle pane = new Rectangle(paneLeft,paneTop,12,12);
+                g2.draw(pane);
+                g2.setColor(Color.YELLOW);
+                g2.fill(pane);
+            }
+            paneLeft += 20;
         }
         
         

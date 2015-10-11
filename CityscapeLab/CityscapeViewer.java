@@ -30,7 +30,7 @@ public class CityscapeViewer
         
         Scanner user_input = new Scanner(System.in);
         
-        System.out.print( "What is the x position of the moon?" );
+        System.out.print( "What is the x position of the moon?: " );
         int user_x = user_input.nextInt();
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
@@ -44,7 +44,7 @@ public class CityscapeViewer
         // animate the cityscape
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
-            component.nextFrame();
+            component.nextFrame(component);
             Thread.sleep( 1000 );
         }
         

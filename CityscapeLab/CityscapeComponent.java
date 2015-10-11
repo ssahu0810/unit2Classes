@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.util.Random;
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
@@ -31,14 +32,34 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
+        Ocean o1 = new Ocean();
+        o1.draw(g2);
+        Sky s1 = new Sky();
+        s1.draw(g2);
         
-        Building b1 = new Building(0,0);
+        Building b1 = new Building(0,6,7);
         b1.draw(g2);
-        Building b2 = new Building (400,-100);
+        Building b2 = new Building (7, 3, 9);
         b2.draw(g2);
+        Building b3 = new Building(10,8,13);
+        b3.draw(g2);
+        Building b4 = new Building(19,5,8);
+        b4.draw(g2);
+        Building b5 = new Building(25,4,17);
+        b5.draw(g2);
+        Building b6 = new Building(30,2,16);
+        b6.draw(g2);
+        Building b7 = new Building(33,6,12);
+        b7.draw(g2);
+        Building b8 = new Building(40,6,15);
+        b8.draw(g2);
         
         Moon m1 = new Moon(user_x, 100);
         m1.draw(g2);
+        
+        int boat_x = 100;
+        Boat boat1 = new Boat(boat_x,500);
+        boat1.draw(g2);
         
         // invoke the draw method on each object in your Cityscape
         // ...
@@ -50,15 +71,13 @@ public class CityscapeComponent extends JComponent
      * Animate the cityscape by updating the objects such that they appear to be animated when they are next drawn.
      *
      */
-    public void nextFrame()
+    public void nextFrame(CityscapeComponent component)
     {
         // update the objects in the cityscape so they are animated
         // ...
         
-        
-        
         // request that the Java Runtime repaints this component by invoking its paintComponent method
-        repaint();
+        component.repaint();
     }
 
 }
