@@ -44,7 +44,7 @@ public class CityscapeViewer
         // animate the cityscape
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
-            component.nextFrame(component);
+            component.nextFrame();
             Thread.sleep( 1000 );
         }
         

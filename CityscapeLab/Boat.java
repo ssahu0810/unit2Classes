@@ -74,4 +74,10 @@ public class Boat
         g2.fill(sail1);
         g2.fill(sail2);
     }
+    
+    public void move()
+    {
+        xLeft += 5;
+        
+    }
 }
