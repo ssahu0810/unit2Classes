@@ -16,13 +16,15 @@ public class CityscapeComponent extends JComponent
     // ...
     private int user_x;
     private Boat boat1;
+    private Boat boat2;
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
     public CityscapeComponent(int user_x)
     {
         this.user_x = user_x;
-        Boat boat1 = new Boat(100,500);
+        this.boat1 = new Boat(100,500);
+        this.boat2 = new Boat(200,450);
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -33,11 +35,13 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        //Making the ocean and the sky
+        //Making the background: ocean, sky, and moon
         Ocean o1 = new Ocean();
         o1.draw(g2);
         Sky s1 = new Sky();
         s1.draw(g2);
+        Moon m1 = new Moon(user_x, 100);
+        m1.draw(g2);
         
         //Making a bunch of buildings
         Building b1 = new Building(0,6,7);
@@ -57,12 +61,11 @@ public class CityscapeComponent extends JComponent
         Building b8 = new Building(40,6,15);
         b8.draw(g2);
         
-        
+        //Making the boats
         boat1.draw(g2);
+        boat2.draw(g2);
     
         
-        Moon m1 = new Moon(user_x, 100);
-        m1.draw(g2);
         
     }
     
@@ -76,6 +79,7 @@ public class CityscapeComponent extends JComponent
         // update the objects in the cityscape so they are animated
         // ...
         boat1.move();
+        boat2.move();
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         this.repaint();
     }

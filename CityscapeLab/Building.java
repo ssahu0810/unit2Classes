@@ -8,13 +8,13 @@ import java.awt.Color;
 /**
  * Write a description of class Building here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sejal Sahu 
+ * @version 10/7/2015
  */
 
 public class Building
 {
-    // instance variables
+    /** Used to specify location and dimensions of building */
     private int xLeft;
     private int height;
     private int width;
@@ -31,19 +31,21 @@ public class Building
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws and colors building
      * 
-     * @param  y   a sample parameter for a method
+     * @param  Graphics2D   Used to draw stuff
      * @return     the sum of x and y 
      */
     public void draw(Graphics2D g2)
     {
+        //Makes and colors building
         Rectangle body = new Rectangle(xLeft, 400 - height, width, height);
         g2.draw(body);
         g2.setColor(Color.BLACK);
         g2.fill(body);
         int paneLeft = xLeft + 4;
         
+        //Fills building with window panels automatically
         while (paneLeft < xLeft + width){
             for( int paneTop = 400 - height + 4; paneTop < 400; paneTop += 20 )
             {

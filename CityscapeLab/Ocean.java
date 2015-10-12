@@ -8,35 +8,31 @@ import java.awt.Color;
 
 
 /**
- * Write a description of class Ocean here.
+ * Draws and colors the ocean
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sejal Sahu 
+ * @version 10/11/2015
  */
 public class Ocean
 {
-    // instance variables - replace the example below with your own
-    
-    
 
     /**
      * Constructor for objects of class Ocean
      */
     public Ocean()
     {
-        // initialise instance variables
-        
+        // No instance variables needed
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws and fills ocean with set coordinates and dimensions
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  g2   Used to draw stuff
+     * 
      */
     public void draw(Graphics2D g2)
     {
-        // put your code here
+        // Draws and fills ocean
         Rectangle body = new Rectangle(0,400,800,200);
         g2.draw(body);
         Color ocean_color = new Color(0,68,255);

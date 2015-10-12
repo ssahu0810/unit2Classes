@@ -7,22 +7,23 @@ import java.awt.Color;
 import java.awt.Polygon;
 
 /**
- * Write a description of class Boat here.
+ * Makes boat object and also makes it move
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sejal Sahu 
+ * @version 10/11/2015
  */
 public class Boat
 {
-    // instance variables - replace the example below with your own
+    // Used to specify boat location
     private int xLeft;
     private int yTop;
 
     /**
-     * An example of a method - replace this comment with your own
+     * Constructor for objects of class Boat
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  x   Base x coordinate of boat
+     * @param  y   Base y coordinate of boat
+     * 
      */
     public Boat(int x, int y)
     {
@@ -31,8 +32,15 @@ public class Boat
         yTop = y;
     }
     
+    /**
+     * Draws and fills boat
+     * 
+     * @param  g2   Used to draw stuff
+     * 
+     */
     public void draw(Graphics2D g2)
     {
+        //Makes the main body and mast
         Rectangle body = new Rectangle(xLeft, yTop, 50, 20);
         Rectangle mast = new Rectangle(xLeft + 22, yTop - 40, 6, 40);
         
@@ -69,15 +77,21 @@ public class Boat
         g2.fill(body);
         g2.fill(mast);
         
-        //Filling sails
+        //Filling sails with different color
         g2.setColor(Color.WHITE);
         g2.fill(sail1);
         g2.fill(sail2);
     }
     
+    /**
+     * Makes the boat move 15 pixels to the right for each frame
+     * 
+     * 
+     * 
+     */
     public void move()
     {
-        xLeft += 5;
+        xLeft += 15;
         
     }
 }

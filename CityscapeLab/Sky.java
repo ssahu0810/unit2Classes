@@ -8,38 +8,34 @@ import java.awt.Color;
 
 
 /**
- * Write a description of class Sky here.
+ * Draws and colors the sky
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sejal Sahu 
+ * @version 10/11/2015
  */
 public class Sky
 {
-    // instance variables - replace the example below with your own
     
-    
-
     /**
      * Constructor for objects of class Sky
      */
     public Sky()
     {
         // initialise instance variables
-        
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws and fills sky with set coordinates and dimensions
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  g2   Used to draw stuff
+     * 
      */
     public void draw(Graphics2D g2)
     {
-        // put your code here
+        // Draws and fills the sky
         Rectangle body = new Rectangle(0,0,800,400);
         g2.draw(body);
-        Color sky_color = new Color(144,238,252);
+        Color sky_color = new Color(41,56,61);
         g2.setColor(sky_color);
         g2.fill(body);
     }
